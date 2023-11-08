@@ -1,26 +1,39 @@
-import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { PlanetComponent } from '../component/singleView/Planet.js';
+import { PeopleComponent } from '../component/singleView/People.js';
+import { ShipComponent } from '../component/singleView/Ship.js';
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
 
-			<hr className="my-4" />
+export const Single = () => {
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
-};
+    const location = useLocation();
+    const [ properties, setProperties ] = useState('');
+    const [ image, setImage ] = useState('');
+    const [ url, setUrl ] = useState('');
 
-Single.propTypes = {
-	match: PropTypes.object
+    const getPageElement = async () => {
+        const res = await fetch(location.state.url);
+        const data = await res.json();
+
+        setProperties(data.result.properties);
+        setImage(location.state.image);
+
+        setUrl(location.state.url);
+        console.log(url);
+
+    };
+
+    useEffect(() => {
+        getPageElement();
+    }, []);
+
+
+    return (
+        <>
+            { url.includes('planets') && <PlanetComponent properties={ properties } image={ image } /> }
+            { url.includes('people') && <PeopleComponent properties={ properties } image={ image } /> }
+            { url.includes('starship') && <ShipComponent properties={ properties } image={ image } /> }
+        </>
+    );
 };

@@ -1,15 +1,34 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext, useEffect, useState } from "react";
 import "../../styles/home.css";
+import { Context } from "../store/appContext";
+import { Navigate } from "react-router-dom";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+	const [ redirect, setRedirect ] = useState(false);
+	useEffect(() => {
+
+		console.log(store);
+	}, [ store ]);
+
+	const redirectFromIntro = () => {
+		setTimeout(() => {
+			setRedirect(true);
+		}, 2000);
+	};
+
+	useEffect(() => {
+		redirectFromIntro();
+	}, []);
+
+
+	return (
+		<>
+			{ redirect && <Navigate to="/planets" replace /> }
+			<div id="intro-view" className="px-4 py-5 text-center">
+				<h1 className="home-title display-5 fw-bold">StarWars</h1>
+				<h4 className="home-subtitle" >4Geeks Academy Assessment</h4>
+			</div>
+		</>
+	);
+};

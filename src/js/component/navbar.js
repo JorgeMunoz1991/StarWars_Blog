@@ -1,17 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StarWars_Logo from "../../img/StarWars_Logo.png"
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
+		<>
+			<nav className="navbar navbar-light bg-light pb-3">
+				<Link to="/" className="ms-5">
+					<img src={StarWars_Logo} />
 				</Link>
-			</div>
-		</nav>
+				<div className="btn-group me-5">
+					<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<i className="fa-solid fa-bars"></i>
+					</button>
+					<ul className="dropdown-menu dropdown-menu-end">
+						<Link to="/planets" className="dropdown-item">Planets</Link>
+						<Link to="/people" className="dropdown-item">People</Link>
+						<Link to="/vehicle" className="dropdown-item">Vehicles</Link>
+						<Link to="/liked" className="dropdown-item">Liked</Link>
+					</ul>
+				</div>
+			</nav>
+		</>
 	);
 };

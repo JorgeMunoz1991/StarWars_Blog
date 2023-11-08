@@ -1,3 +1,65 @@
-/* 
-    General Styles
-*/
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poiret+One&display=swap');
+
+body {
+    background: black;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    color: #CDA114;
+    font-size: 70px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a {
+    font-family: 'Poiret One', cursive;
+    color: #CDA114;
+}
+
+.home-title {
+    font-size: 100px;
+    margin-top: 10rem;
+}
+
+.home-subtitle {
+    font-size: 60px;
+}
+
+a {
+    text-decoration: none;
+    margin: 1rem;
+    font-size: 17px;
+
+}
+
+#intro-view {
+    background: url('https://gizmodo.com.au/wp-content/uploads/2021/11/19/31db174e9d803aed420a967f5014bdc1.gif?quality=75');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.card-opacity {
+    background: rgba(81, 148, 241, 0.295);
+    /* background: rgba(255, 255, 255, 0.29); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+.vehicle-background,
+.people-background,
+.planet-background,
+.single-view {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
