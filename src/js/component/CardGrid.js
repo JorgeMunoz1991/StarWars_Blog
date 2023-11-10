@@ -5,18 +5,18 @@ import { SingleCard } from './SingleCard.js';
 export const CardGrid = ({ endpoint }) => {
     const [ topic, setTopic ] = useState(null);
     const { store, actions } = useContext(Context);
-    console.log(topic);
 
     useEffect(() => {
-        getTopic();
-    }, [ store.likedElements ]);
+        if( endpoint == "likedElements"){
+            setTopic(JSON.parse(localStorage.getItem("likedElements")))
+        }
+        else {
+        setTopic(store[endpoint])
+        }
+    }, [ store[endpoint], store.likedElements ]);
 
-    const getTopic = async() => {
-        let newTopic = await actions.getItem(endpoint)
-        setTopic(newTopic)
-    }
 
-
+    console.log(store.likedElements)
     return (
         <>
             <ul className="d-flex flex-wrap justify-content-around">

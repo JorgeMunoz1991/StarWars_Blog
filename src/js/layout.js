@@ -27,7 +27,7 @@ const Layout = () => {
 						<Route path="/people" element={<Page endpoint={"people"} Title={"Characters"} />} />
 						<Route path="/vehicles" element={<Page endpoint={"starships"} Title={"Vehicles"} />} />
 						<Route path="/planets" element={<Page endpoint={"planets"} Title={"Planets"} />} />
-						<Route path="/like" element={<Like />} />
+						<Route path="/liked" element={<Like />} />
 						<Route path="/single" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

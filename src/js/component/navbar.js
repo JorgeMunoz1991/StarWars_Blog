@@ -16,7 +16,7 @@ export const Navbar = () => {
 					<ul className="dropdown-menu dropdown-menu-end">
 						<Link to="/planets" className="dropdown-item">Planets</Link>
 						<Link to="/people" className="dropdown-item">People</Link>
-						<Link to="/vehicle" className="dropdown-item">Vehicles</Link>
+						<Link to="/vehicles" className="dropdown-item">Vehicles</Link>
 						<Link to="/liked" className="dropdown-item">Liked</Link>
 					</ul>
 				</div>
