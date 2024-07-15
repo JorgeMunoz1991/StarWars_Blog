@@ -24,7 +24,7 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/people" element={<Page endpoint={"people"} Title={"Characters"} />} />
+						<Route path="/people" element={<Page endpoint={"people"} Title={"People"} />} />
 						<Route path="/vehicles" element={<Page endpoint={"starships"} Title={"Vehicles"} />} />
 						<Route path="/planets" element={<Page endpoint={"planets"} Title={"Planets"} />} />
 						<Route path="/liked" element={<Like />} />

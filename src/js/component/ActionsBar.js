@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export const ActionsBar = ({ item }) => {
         actions.addLike(item);
     };
 
-    const likedElements = JSON.parse(localStorage.getItem("likedElements"))
+    const likedElements = JSON.parse(localStorage.getItem("likedElements")) || [];
 
     const isLiked = likedElements.some(element => element.name === item.name);
 

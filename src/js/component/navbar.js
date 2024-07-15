@@ -10,7 +10,7 @@ export const Navbar = () => {
 					<img src={StarWars_Logo} />
 				</Link>
 				<div className="btn-group me-5">
-					<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<button className="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<i className="fa-solid fa-bars"></i>
 					</button>
 					<ul className="dropdown-menu dropdown-menu-end">

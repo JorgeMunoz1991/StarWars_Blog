@@ -13,7 +13,7 @@ export const ShipComponent = ({ properties, image }) => {
                                 style={ { borderTopLeftRadius: ".5rem", borderBottomLeftRadius: ".5rem" } }>
                                 <img src={ image || avatar }
                                     alt="Avatar" className="my-5  rounded" style={ { width: "10rem" } } />
-                                <h5>hello</h5>
+                                <h5>Hello</h5>
 
                             </div>
                             <div className="col-md-8">
